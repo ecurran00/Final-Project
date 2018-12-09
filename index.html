@@ -1,75 +1,194 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="Website exlaining the origin of tropical birds in Brooklyn">
-  <script src="script.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=yourfonthere" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <title>The Parrots of Brooklyn</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
-
 <body>
-  <div id="pagewrap">
-    <h1 class="header">The Parrots of Brooklyn</h1>
 
-    <div id="flexwrapper">
-<div class="box4">
-        <p>Brooklyn Bridge</p>
-      </div>
-    </div>
+  <div class="site-wrap">
 
-<div>
-  <p>A group of monk parrots currently lives in Brooklyn. How did these tropical visitors come to be there, and how did they adjust? </p>
-</div>
+    <h1>Birds of Brooklyn: Monk Parakeet</h1>
 
-    <div id="flexwrapper">
+    <img src="./images/bridge-test.png" class="slide-in image shadowtop" />
 
-        <p>The Monk Parrots are originally from Argentina. In order to get to New York, they migrated over 5,503 mi by plane in order to be sold as pets in New York pet stores.</p>
-      
+    <p>Few birds lend an exotic flavor to Brooklyn like the monk parakeet. So how did this brightly colored South American bird end up in Brooklyn? It’s not unusual for such migratory birds as the Blackburnian warbler to make it here from Central and South America in the spring, but the monk parakeet (Myiopsitta monachus) is not migratory. It got here in quite a different way. </p>
 
-      <div class="box3">
-        <p>North and South America Map</p>
-      </div>
-    </div>
+<section 1>
 
-      <div id="flexwrapper">
-<div class="box4">
-        <p>Box of Birds</p>
-      </div>
-    </div>
+<img src="./images/americas-map.png" alt="Map of the Americas" class="align-left slide-in shadow" width="50%"/>
 
+<p class="text-left">In the 1960s, this small fruit- and seed-eating parrot was considered an agricultural pest in its native Argentina. After undertaking a huge, and ultimately unsuccessful, extermination program, the government tried a different tack to control bird populations that would also make some profit. Monk parakeets, which tend to be an attractive bright green with light gray head and breast feathers, were collected and exported over 5,503 miles to be sold in the United States as pets.</p>
 
-<div id="flexwrapper">
-  <p>Legend has it that the birds escaped from JFK airport after being unloaded from their plane. The birds then flew across Brooklyn until they were able to find habitable areas to roost.</p>
-</div>
-</div>
+</section>
 
-      <div id="flexwrapper">
-<div class="box4">
-        <p>Brooklyn Map</p>
-      </div>
-    </div>
+<section>
 
-    <div id="flexwrapper">
-  <p>Eventually the birds migrated to Greenwood Cemetary, which is still the most densely parrot-populated area of Brooklyn today. The spires and crives of the gravestones and church structures in the area provide the perfect balance of protection and support for nests and roosting. </p>
-</div>
-</div>
+<img src="./images/box.png" alt="Box with Birds"  class="align-right slide-in shadow" width="50%" />
 
-<div id="flexwrapper">
-<div class="box4">
-        <p>Greenwood Cemetary</p>
-      </div>
-    </div>
+<p class="text-right">As one story goes, a shipment of these birds somehow got loose at John F. Kennedy International Airport and flew into Brooklyn. They arrived, liked the neighborhood, and stayed. Another story has it that an Argentinian steamer with a large shipment of monks found itself in distress in the Verrazano Narrows. A seaman aboard the ship freed the birds, which flew to Seagate, near Coney Island, and moved in. Yet another story tells of a Brooklyn couple going through a divorce, with one spouse releasing the other’s pet birds as revenge. I think the JFK story is probably correct.</p>
 
-    </div>
-    <!--END FLEXWRAP-->
-    <footer><span>Footer Stuff<span></footer>
-  </div><!--END PAGEWRAP-->
+  </section>
+
+<section>
+<img src="./images/brooklyn-map.png" alt="Map of Brooklyn" class="align-left slide-in shadow" width="40%" />
+
+<p class="text-left">In any case, monk parakeets seem to be here to stay, and they prefer Brooklyn and Queens over Manhattan for a simple reason. The birds are communal nesters and build huge stick nests like condominiums with many apartments. You will see their nests not only on utility poles but also in trees and nestled into built structures with lots of crevices and ledges. This brings us to probably the most reliable spot to see monk parakeets in Brooklyn: the grand Gothic Revival archway entrance to Green-Wood Cemetery. The birds build their huge nests in this structure. Why haven’t the groundskeepers removed the nests? It is believed that if the nests were removed, pigeons would move in. Pigeon droppings would be harmful to the archway structure, but monk droppings are not.</p>
+
+</section>
+
+<section class="height">
+
+<img src="./images/greenwood.png" alt="Greenwood Cemetary" class="slide-in image shadow" width="80%"  />
+
+<p>So the monks remain a fixture there. There is also a large population in Midwood, near Brooklyn College. If you spot a monk parakeet in the same vicinity over many years, it could very well be the same bird—they live 20 to 30 years. The tale of the monk parakeet is great Brooklyn story, and the species is a fascinating addition to the avifauna of our borough.</p>
+
+</section>
   
+
+
+  </div>
+
 </body>
 
+  <script>
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+
+    const sliderImages = document.querySelectorAll('.slide-in');
+
+    function checkSlide() {
+      sliderImages.forEach(function(sliderImage) {
+        // half way through the image
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide));
+
+  </script>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      background: linear-gradient(#e664, #9198e5);
+      font-family: 'Varela Round', sans-serif;
+      font-size: 18px;
+      font-weight: 100;
+      line-height: 1.5em;
+    }
+    
+    body {
+      margin: 0;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    h1 {
+      font-family: 'Rubik', sans-serif;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    section {
+      width: 100%;
+  height: 25em;
+  text-align: center;
+  padding: 0.5em;
+
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .site-wrap {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 40px;
+      text-align: left;
+    }
+
+    .align-left {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .align-right {
+      float: right;
+      margin-left: 20px;
+    }
+
+    .slide-in {
+      opacity: 0;
+      transition: all .5s;
+    }
+
+    .align-left.slide-in {
+      transform: translateX(-30%) scale(0.95);
+    }
+    
+    .align-right.slide-in {
+      transform: translateX(30%) scale(0.95);
+    }
+
+    .slide-in.active {
+      opacity: 1;
+      transform: translateX(0%) scale(1);
+    }
+
+    .image {
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    }
+
+    .height {
+      height: 45em;
+    }
+
+    .shadowtop { -webkit-filter: drop-shadow(5px 5px 10px #c490c7);
+    filter:         drop-shadow(5px 5px 10px #e2b1e6);  }
+
+    .shadow {
+-webkit-filter: drop-shadow(5px 5px 10px #aa8fc9);
+    filter:         drop-shadow(5px 5px 10px #aa8fc9); 
+}
+
+    }
+  
+
+  </style>
+
+</body>
 </html>
