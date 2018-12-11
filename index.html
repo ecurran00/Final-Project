@@ -8,17 +8,21 @@
 </head>
 <body>
 
+
+  <img src="./images/bridge-test.png" class="hero-image" />
+
+
   <div class="site-wrap">
 
-    <h1>Birds of Brooklyn: Monk Parakeet</h1>
 
-    <img src="./images/bridge-test.png" class="slide-in image shadowtop" />
+    
+    <h1>Birds of Brooklyn: <font size="5">The Monk Parakeet</font></h1>
 
     <p>Few birds lend an exotic flavor to Brooklyn like the monk parakeet. So how did this brightly colored South American bird end up in Brooklyn? It’s not unusual for such migratory birds as the Blackburnian warbler to make it here from Central and South America in the spring, but the monk parakeet (Myiopsitta monachus) is not migratory. It got here in quite a different way. </p>
 
 <section 1>
 
-<img src="./images/americas-map.png" alt="Map of the Americas" class="align-left slide-in shadow" width="50%"/>
+<img src="./images/americas-map.png" alt="Map of the Americas" class="align-left slide-in" width="50%"/>
 
 <p class="text-left">In the 1960s, this small fruit- and seed-eating parrot was considered an agricultural pest in its native Argentina. After undertaking a huge, and ultimately unsuccessful, extermination program, the government tried a different tack to control bird populations that would also make some profit. Monk parakeets, which tend to be an attractive bright green with light gray head and breast feathers, were collected and exported over 5,503 miles to be sold in the United States as pets.</p>
 
@@ -26,14 +30,14 @@
 
 <section>
 
-<img src="./images/box.png" alt="Box with Birds"  class="align-right slide-in shadow" width="50%" />
+<img src="./images/box.png" alt="Box with Birds"  class="align-right slide-in" width="50%" />
 
 <p class="text-right">As one story goes, a shipment of these birds somehow got loose at John F. Kennedy International Airport and flew into Brooklyn. They arrived, liked the neighborhood, and stayed. Another story has it that an Argentinian steamer with a large shipment of monks found itself in distress in the Verrazano Narrows. A seaman aboard the ship freed the birds, which flew to Seagate, near Coney Island, and moved in. Yet another story tells of a Brooklyn couple going through a divorce, with one spouse releasing the other’s pet birds as revenge. I think the JFK story is probably correct.</p>
 
   </section>
 
 <section>
-<img src="./images/brooklyn-map.png" alt="Map of Brooklyn" class="align-left slide-in shadow" width="40%" />
+<img src="./images/brooklyn-map.png" alt="Map of Brooklyn" class="align-left slide-in" width="40%" />
 
 <p class="text-left">In any case, monk parakeets seem to be here to stay, and they prefer Brooklyn and Queens over Manhattan for a simple reason. The birds are communal nesters and build huge stick nests like condominiums with many apartments. You will see their nests not only on utility poles but also in trees and nestled into built structures with lots of crevices and ledges. This brings us to probably the most reliable spot to see monk parakeets in Brooklyn: the grand Gothic Revival archway entrance to Green-Wood Cemetery. The birds build their huge nests in this structure. Why haven’t the groundskeepers removed the nests? It is believed that if the nests were removed, pigeons would move in. Pigeon droppings would be harmful to the archway structure, but monk droppings are not.</p>
 
@@ -41,15 +45,20 @@
 
 <section class="height">
 
-<img src="./images/greenwood.png" alt="Greenwood Cemetary" class="slide-in image shadow" width="80%"  />
-
 <p>So the monks remain a fixture there. There is also a large population in Midwood, near Brooklyn College. If you spot a monk parakeet in the same vicinity over many years, it could very well be the same bird—they live 20 to 30 years. The tale of the monk parakeet is great Brooklyn story, and the species is a fascinating addition to the avifauna of our borough.</p>
 
 </section>
   
+  <img src="./images/greenwood.png" alt="Greenwood Cemetary" class="slide-in footer-image" width="80%"  />
 
 
   </div>
+
+<div class="wavey">
+  <div class="ocean">
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
 
 </body>
 
@@ -91,10 +100,18 @@
 
   </script>
 
+
+
   <style>
-    html {
+
+    html, body { height: 100%;  }
+
+    body {
+ 
+      background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+      
       box-sizing: border-box;
-      background: linear-gradient(#e664, #9198e5);
+      
       font-family: 'Varela Round', sans-serif;
       font-size: 18px;
       font-weight: 100;
@@ -113,6 +130,7 @@
       font-family: 'Rubik', sans-serif;
       margin-top: 0;
       text-align: center;
+      line-height: 32px;
     }
 
     section {
@@ -173,6 +191,22 @@
     width: 85%;
     }
 
+    .hero-image {
+      position: relative; top: 0px;
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    }
+
+    .footer-image {
+      position: relative; bottom: 0px;
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    }
+
     .height {
       height: 45em;
     }
@@ -184,6 +218,50 @@
 -webkit-filter: drop-shadow(5px 5px 10px #aa8fc9);
     filter:         drop-shadow(5px 5px 10px #aa8fc9); 
 }
+
+.ocean { 
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
 
     }
   
