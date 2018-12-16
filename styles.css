@@ -1,12 +1,12 @@
 body {
-  background-color: #FBF7F5;
+  background-color: #C4E5FF;
+  font-family: times new roman;
   margin: 0;
   padding: 0;
 }
 
 
-
-#flexwrapper {
+.flexwrapper {
   width: 80%;
   height: auto;
   display: flex; /*sets parent container to flex*/
@@ -17,76 +17,152 @@ body {
 }
 
 h1.header {
-  font-family: "Patrick Hand", helvetica;
-  font-size: 6em;
+  font-family: 'Varela Round', sans-serif;
+  letter-spacing: 2px;
+  font-size: 4em;
   text-align: center;
   padding-top: 0.25em;
 }
 
-.box1 {
-  width: 30%;
-  height: 10em;
-  background-color: #e1dedc;
-  text-align: left;
+  .box1 {
+  width: 100%;
+  
+  text-align: center;
   padding: 0.5em;
   margin: 0.5em;
-  overflow: hidden;
+
 }
 
 .box2 {
-  width: 30%;
-  height: 10em;
-  background-color: #e1dedc;
+  width: 80%;
+  
   text-align: left;
   padding: 0.5em;
   margin: 0.5em;
-  overflow: hidden;
+
 }
 
 .box3 {
-  width: 30%;
-  height: 10em;
-  background-color: #e1dedc;
+  width: 20%;
+  
   text-align: left;
   padding: 0.5em;
   margin: 0.5em;
-  overflow: hidden;
-
 }
 
   .box4 {
   width: 100%;
-  height: 10em;
-  background-color: #e1dedc;
-  text-align: left;
+  
+  text-align: center;
+  padding: 0.5em;
+  margin-top: 1em;
+
+}
+
+ .box5 {
+  width: 100%;
+  
+  text-align: center;
+  padding: 0.5em;
+  margin-top: 5em;
+
+}
+
+.box6 {
+  width: 100%;
+  
+  text-align: center;
   padding: 0.5em;
   margin: 0.5em;
-  overflow: hidden;
+
 }
+
+.hero-image {
+  position: relative; top: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+}
+
+p.extra {
+  width: 60%;
+}
+
+#image-container {
+  
+  width: 50%;
+  flex: 0 0 auto;
+
+}
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .site-wrap {
+      max-width: 2000px;
+      margin: 100px auto;
+      padding: 40px;
+      text-align: left;
+    }
+
+    .align-left {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .align-right {
+      float: right;
+      margin-left: 20px;
+    }
+
+    .slide-in {
+      opacity: 0;
+      transition: all .5s;
+    }
+
+    .align-left.slide-in {
+      transform: translateX(-30%) scale(0.95);
+    }
+    
+    .align-right.slide-in {
+      transform: translateX(30%) scale(0.95);
+    }
+
+    .slide-in.active {
+      opacity: 1;
+      transform: translateX(0%) scale(1);
+    }
 
 /*overflow: hidden; hides "content here" text as you squeeze down the window—set box heights to "auto" and remove overflow hidden as you add content*/
 
 p {
-  font-family: helvetica;
+  font-family: 'Varela Round', sans-serif;
   font-size: 1em;
   text-align: center;
 }
 
 footer {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin-top: 5em;
   height: autoem;
-  background-color: #e1dedc;
+  background-color: #2ECC71;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 footer span {
-  color: black;
+  color: #fff;
   margin: 0.75em auto 1.5em auto;
-  font-family: "Patrick Hand";
-  font-size: 2em;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.5em;
 }
 
 /*MEEEEEDIAAAA QUERIES*/
@@ -123,9 +199,14 @@ footer span {
     margin: .5rem 0 .5rem .85rem;
 
     }
+
+
+p.extra {
+  width: 100%;
+}
   
 
   footer span {
-    font-size: 0.75em;
+    font-size: 0.5em;
   }
 }
